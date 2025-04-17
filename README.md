@@ -6,12 +6,20 @@ Supporting codes for the manuscript: **_Comparative analysis of rumen metagenome
 
 Amplicon and metagenomic sequencing data of rumen microbiota are available at the National Center for Biotechnology Information (NCBI) under the following BioProject accession numbers:
 
-| Study   | Project Type              | BioProject ID   |
-|---------|---------------------------|-----------------|
-| Beef1   | Amplicon sequencing       | PRJNA1150225    |
-| Beef2   | Amplicon sequencing       | PRJNA1150246    |
-| Dairy1  | Amplicon sequencing       | PRJNA1150253    |
-| Dairy2  | Amplicon sequencing       | PRJNA1150254    |
-| All     | Metagenomic sequencing    | PRJNA1150266    |
+| Project description                              | Project Type           | BioProject ID     | Reference                  |
+|--------------------------------------------------|------------------------|-------------------|----------------------------|
+| Beef cattle supplemented with 3-NOP (amplicon)   | Amplicon sequencing    | PRJNA1150225      | Romero-Perez et al. (2014) |
+| Beef cattle supplemented with 3-NOP (amplicon)   | Amplicon sequencing    | PRJNA1150246      | Romero-Perez et al. (2015) |
+| Dairy cattle supplemented with 3-NOP (amplicon)  | Amplicon sequencing    | PRJNA1150253      | Haisan et al. (2014)       |
+| Dairy cattle supplemented with 3-NOP (amplicon)  | Amplicon sequencing    | PRJNA1150254      | Haisan et al. (2017)       |
+| Rumen microbiome (beef and dairy)                | Metagenomic sequencing | PRJNA1150266      |                            |
+
+**References:**
+
+- Romero-Perez et al. (2014), *The potential of 3-nitrooxypropanol to lower enteric methane emissions from beef cattle*
+- Romero-Perez et al. (2015), *Sustained reduction in methane production from long-term addition of 3-nitrooxypropanol to a beef cattle diet*
+- Haisan et al. (2014), *The effects of feeding 3-nitrooxypropanol on methane emissions and productivity of Holstein cows in mid lactation*
+- Haisan et al. (2017), *The effects of feeding 3-nitrooxypropanol at two doses on milk production, rumen fermentation, plasma metabolites, nutrient digestibility, and methane emissions in lactating Holstein cows*
 
 You can access these datasets through [NCBI BioProject](https://www.ncbi.nlm.nih.gov/bioproject).
+
