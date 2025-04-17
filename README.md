@@ -2,8 +2,6 @@
 
 Supporting codes for the manuscript: **_Comparative analysis of rumen metagenomes with dietary supplementation of 3-nitrooxypropanol revealed divergent modes of action in hydrogen metabolism and reductant pathways between beef and dairy cattle_** published in Microbiome.
 
-# Comparative analysis of 3-NOP metagenomes
-
 ## 📂 Raw sequencing data availability
 
 Amplicon and metagenomic sequencing data of rumen microbiota are available at the National Center for Biotechnology Information (NCBI) under the following BioProject accession numbers:
