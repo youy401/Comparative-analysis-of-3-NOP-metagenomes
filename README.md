@@ -8,7 +8,7 @@ Amplicon and metagenomic sequencing data of rumen microbiota are available at th
 
 | Study   | Project Type              | BioProject ID   |
 |---------|---------------------------|-----------------|
-| Beef1   | Amplicon sequencing       | PRJNA115022     |
+| Beef1   | Amplicon sequencing       | PRJNA1150225     |
 | Beef2   | Amplicon sequencing       | PRJNA1150246    |
 | Dairy1  | Amplicon sequencing       | PRJNA1150253    |
 | Dairy2  | Amplicon sequencing       | PRJNA1150254    |
