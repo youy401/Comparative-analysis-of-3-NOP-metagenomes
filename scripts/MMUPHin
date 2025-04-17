@@ -5,9 +5,9 @@
 # and compares results with a pooled differential abundance analysis using MaAsLin2.
 
 # Input:
-# - DSM_meta.txt: Sample metadata (tab-delimited, includes studyID, dose, period, etc.)
-# - hydrogenase_CPM.txt: Normalized feature abundance data (e.g., CPM)
-#   Includes hydrogenase, reductase, or other target gene counts across studies
+# - your_metadata.txt: Sample metadata (tab-delimited, includes studyID, dose, period, etc.)
+# - your_abundance_data.txt: Normalized feature abundance data (e.g., CPM)
+#   Includes features such as hydrogenase, reductase, or other target gene counts
 
 # Analysis:
 # - Batch effect correction across studies using `adjust_batch()` from MMUPHin
@@ -43,49 +43,49 @@ library(vegan)
 # Set your working directory as needed
 setwd("your/path/to/project")
 
-# Input files: metadata and feature abundance data formatted as relative abundance or CPM (e.g., taxa abundance, hydrogenase, reductase, electron transfer genes, etc.)
-DSM_meta <- read.table("DSM_meta.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE)
-DSM_abd <- read.table("hydrogenase_CPM.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE, check.names = FALSE)
+# Input files
+metadata <- read.table("your_metadata.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE)
+abundance <- read.table("your_abundance_data.txt", header = TRUE, sep = "\t", stringsAsFactors = FALSE, check.names = FALSE)
 
-rownames(DSM_meta) <- DSM_meta[,1]
-DSM_meta <- DSM_meta[,-1]
-rownames(DSM_abd) <- DSM_abd[,1]
-DSM_abd <- DSM_abd[,-1]
+rownames(metadata) <- metadata[,1]
+metadata <- metadata[,-1]
+rownames(abundance) <- abundance[,1]
+abundance <- abundance[,-1]
 
-DSM_meta$studyID <- as.factor(DSM_meta$studyID)
+metadata$studyID <- as.factor(metadata$studyID)
 
 # ============================================
 # ⚙️ Batch correction using MMUPHin
 # ============================================
 fit_adjust_batch <- adjust_batch(
-  feature_abd = DSM_abd,
+  feature_abd = abundance,
   batch = "studyID",
   covariates = c("study_condition"),
-  data = DSM_meta,
+  data = metadata,
   control = list(verbose = FALSE)
 )
 
-DSM_abd_adj <- fit_adjust_batch$feature_abd_adj
+abundance_adj <- fit_adjust_batch$feature_abd_adj
 
 # ============================================
 # 📊 ADONIS (PERMANOVA) before and after batch correction
 # ============================================
-D_before <- vegdist(t(DSM_abd))
-D_after <- vegdist(t(DSM_abd_adj))
+D_before <- vegdist(t(abundance))
+D_after <- vegdist(t(abundance_adj))
 
 set.seed(1)
-fit_adonis_before <- adonis(D_before ~ studyID, data = DSM_meta, permutations = 999)
-fit_adonis_after <- adonis(D_after ~ studyID, data = DSM_meta, permutations = 999)
+fit_adonis_before <- adonis(D_before ~ studyID, data = metadata, permutations = 999)
+fit_adonis_after <- adonis(D_after ~ studyID, data = metadata, permutations = 999)
 
 # ============================================
 # 📈 Meta-analysis across studies (study-wise modeling)
 # ============================================
 fit_lm_meta <- lm_meta(
-  feature_abd = DSM_abd_adj,
+  feature_abd = abundance_adj,
   batch = "studyID",
   exposure = c("dose"),
   covariates = c("breed", "period", "forage", "concentrate"),
-  data = DSM_meta,
+  data = metadata,
   control = list(
     normalization = "NONE",
     transform = "NONE",
@@ -110,11 +110,9 @@ fit_lm_meta$meta_fits %>%
 # ============================================
 # 📉 Maaslin2 analysis (global pooled model)
 # ============================================
-# Note: MaAsLin2 treats the dataset as a single model
-
 fit_maaslin2 <- Maaslin2(
-  input_data = DSM_abd_adj,
-  input_metadata = DSM_meta,
+  input_data = abundance_adj,
+  input_metadata = metadata,
   output = "maaslin2_output",
   fixed_effects = c("dose"),
   random_effects = c("breed", "period"),
