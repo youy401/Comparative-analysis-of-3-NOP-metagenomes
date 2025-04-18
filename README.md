@@ -6,15 +6,15 @@ Supporting codes for the manuscript: **_Comparative analysis of rumen metagenome
 
 Amplicon and metagenomic sequencing data of rumen microbiota are available at the National Center for Biotechnology Information (NCBI) under the following BioProject accession numbers:
 
-| Project description                              | Project Type           | BioProject ID     | Reference                  |
-|--------------------------------------------------|------------------------|-------------------|----------------------------|
-| Beef cattle supplemented with 3-NOP (amplicon)   | Amplicon sequencing    | PRJNA1150225      | Romero-Perez et al. (2014) |
-| Beef cattle supplemented with 3-NOP (amplicon)   | Amplicon sequencing    | PRJNA1150246      | Romero-Perez et al. (2015) |
-| Dairy cattle supplemented with 3-NOP (amplicon)  | Amplicon sequencing    | PRJNA1150253      | Haisan et al. (2014)       |
-| Dairy cattle supplemented with 3-NOP (amplicon)  | Amplicon sequencing    | PRJNA1150254      | Haisan et al. (2017)       |
-| Rumen microbiome (beef and dairy)                | Metagenomic sequencing | PRJNA1150266      |                            |
+| Project description                              | Project Type           | BioProject ID     | Study reference             | Sequencing reference |
+|--------------------------------------------------|------------------------|-------------------|-----------------------------|----------------------|
+| Beef cattle supplemented with 3-NOP (amplicon)   | Amplicon sequencing    | PRJNA1150225      | Romero-Perez et al. (2014)  | This study           |
+| Beef cattle supplemented with 3-NOP (amplicon)   | Amplicon sequencing    | PRJNA1150246      | Romero-Perez et al. (2015)  | This study           |
+| Dairy cattle supplemented with 3-NOP (amplicon)  | Amplicon sequencing    | PRJNA1150253      | Haisan et al. (2014)        | This study           |
+| Dairy cattle supplemented with 3-NOP (amplicon)  | Amplicon sequencing    | PRJNA1150254      | Haisan et al. (2017)        | This study           |
+| Rumen microbiome (beef and dairy)                | Metagenomic sequencing | PRJNA1150266      | This study                  | This study           |
 
-**References:**
+**Study references:**
 
 - Romero-Perez et al. (2014), *The potential of 3-nitrooxypropanol to lower enteric methane emissions from beef cattle*
 - Romero-Perez et al. (2015), *Sustained reduction in methane production from long-term addition of 3-nitrooxypropanol to a beef cattle diet*
