@@ -23,5 +23,5 @@ Amplicon and metagenomic sequencing data of rumen microbiota are available at th
 
 You can access these datasets through [NCBI BioProject](https://www.ncbi.nlm.nih.gov/bioproject).
 
-More information can be found by directly contacting the author Youyoung Choi:
+More information can be found by contacting the author Youyoung Choi:
 - youyoung.choi@ubc.ca or dudolboy401@gmail.com
